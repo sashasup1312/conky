@@ -84,7 +84,7 @@ ${voffset 15}
 ${goto 50}${font Open Sans:bold:size=13}${color1}NET${alignr}${offset -50}${color1}
 ${goto 50}${font Open Sans:bold:size=9}${color1}Internal IP${alignr 50}${font Open Sans:normal:size=9}${if_up eno1}${addr eno1}${endif}${if_up wlo1}${addr wlo1}${endif}
 ${goto 50}${font Open Sans:bold:size=9}${color1}DNS ${alignr}${offset -50}${font Open Sans:normal:size=9}${execi 99999 systemd-resolve --status | grep "DNS Servers:" | awk '{ print $3 }'}
-${goto 50}${font Open Sans:bold:size=9}${color1}Public IP${alignr 50}${font Open Sans:normal:size=9}${curl www.icanhazip.com}
+${goto 50}${font Open Sans:bold:size=9}${color1}Public IP${alignr 50}${font Open Sans:normal:size=9}${curl https://icanhazip.com/}
 ${goto 50}${font Open Sans:bold:size=9}${color1}Uplink ${alignr 50}${color}${font Open Sans:normal:size=9}${if_up eno1}${upspeed eno1}${endif}${if_up wlo1}${upspeed wlo1}${endif}
 ${goto 50}${font Open Sans:bold:size=9}${color1}Downlink ${alignr 50}${color}${font Open Sans:normal:size=9}${if_up eno1}${downspeed eno1}${endif}${if_up wlo1}${downspeed wlo1}${endif}
 
